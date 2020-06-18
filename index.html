@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="author" content="Fabrice Feugang Kemegni">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>Another Spider solitaire game</title>
+  <meta name="author" content="">
+  <meta name="description" content="A spider solitaire game implemented in vanilla js">
+  <meta name="author" content="Fabrice Feugang Kemegni">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  </head>
+</head>
 
-  <body>
-    <div id="panel" class="panel">
-      <div id="scoreContainer">
-        <h5 >Score: <label id="score">0</label></h4>
-        <h5 >Moves: <label id="moves">0</label></h4>
-        <h5 >Elapsed Time: <label id="time"></label></h4>
-      </div>
-      <div class="stack completed"> </div>
+<body>
+  <div id="panel" class="panel">
+    <div id="scoreContainer">
+      <h5>Score: <label id="score">0</label></h4>
+        <h5>Moves: <label id="moves">0</label></h4>
+          <h5>Elapsed Time: <label id="time"></label></h4>
     </div>
+    <div class="stack completed"> </div>
+  </div>
 
-    <div id="showGameMenuContainer"> 
-      <button id="showGameMenuButton" onclick="showPauseMenu()" title="Show game menu">|||</button>
-    </div>
+  <div id="showGameMenuContainer">
+    <button id="showGameMenuButton" onclick="showPauseMenu()" title="Show game menu">|||</button>
+  </div>
 
-    <div class="modal" >
-      <div class="modal-content">
-        <div class="modal-body">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-body">
 
-          <div id="newGameMenu">
+        <div id="newGameMenu">
 
-            <button id="newGameButton" hidden>New Game</button>
+          <button id="newGameButton" hidden>New Game</button>
 
+          <div>
+            Difficulty
             <div>
-              Difficulty
-              <div>
-                <input id="numberOfColors1" type="radio" name="numberOfColors" value=1 checked>
-                <label for="numberOfColors1"> 1 Color (Beginner)</label>
-              </div>
-              <div>
-                <input id="numberOfColors2" type="radio" name="numberOfColors" value=2>
-                <label for="numberOfColors2"> 2 Color (Normal)</label>
-              </div>
-              <div>
-                <input id="numberOfColors3" type="radio" name="numberOfColors" value=3>
-                <label for="numberOfColors3"> 3 Color (Pro)</label>
-              </div>
-              <div>
-                <input id="numberOfColors4" type="radio" name="numberOfColors" value=4>
-                <label for="numberOfColors4"> 4 Color (Expert)</label>
-              </div>
-
+              <input id="numberOfColors1" type="radio" name="numberOfColors" value=1 checked>
+              <label for="numberOfColors1"> 1 Color (Beginner)</label>
+            </div>
+            <div>
+              <input id="numberOfColors2" type="radio" name="numberOfColors" value=2>
+              <label for="numberOfColors2"> 2 Color (Normal)</label>
+            </div>
+            <div>
+              <input id="numberOfColors3" type="radio" name="numberOfColors" value=3>
+              <label for="numberOfColors3"> 3 Color (Pro)</label>
+            </div>
+            <div>
+              <input id="numberOfColors4" type="radio" name="numberOfColors" value=4>
+              <label for="numberOfColors4"> 4 Color (Expert)</label>
             </div>
 
-            <button id="startGameButton">Start Game</button></h3>
-
           </div>
 
-          <div id="pausedGameMenu" hidden>
-            <button id="restartGameButton">Restart Game</button>
-            <button id="resumeGameButton">Resume Game</button>
-            <button id="exitGameButton">Exit Game</button>
-          </div>
+          <button id="startGameButton">Start Game</button></h3>
 
         </div>
+
+        <div id="pausedGameMenu" hidden>
+          <button id="restartGameButton">Restart Game</button>
+          <button id="resumeGameButton">Resume Game</button>
+          <button id="exitGameButton">Exit Game</button>
+        </div>
+
       </div>
     </div>
-  </body>
-  <link href="main.css" rel="stylesheet">
-  <script src="main.js" type="text/javascript"></script>
+  </div>
+</body>
+<link href="main.css" rel="stylesheet">
+<script src="main.js" type="text/javascript"></script>
+
 </html>

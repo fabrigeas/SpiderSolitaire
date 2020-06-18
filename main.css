@@ -154,3 +154,8 @@ button#hideGameMenuButton {
 .hide{
   transform: translateX(-9999px);
 }
+
+button {
+  color: orange !important;
+  cursor: pointer;
+}
