@@ -34,7 +34,7 @@ var gameMenu = {};
 (function () {
   initGameMenu();
   initGame();
-  // startGame();
+  registerServiceWorker();
 })();
 
 /** Initializes the game menu
@@ -86,6 +86,35 @@ function initGame() {
   gameTimer = new GameTimer();
 
   showPauseMenu(false);
+}
+
+/** Initializes the service worker to provide offline experience
+ *
+ */
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then(() => {})
+        .catch((error) => console.error("Failed to register service worker", error));
+    });
+  }
+}
+
+/** un-registers the service worker
+ *
+ */
+function unregister() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.ready
+      .then((registration) => {
+        registration.unregister();
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
 }
 
 /** Start, restart or resume a game
@@ -340,7 +369,6 @@ function removeCardOver() {
  * @param {StackDOM} newStack The destination stack
  */
 function addCardToStack(card, newStack) {
-
   let margin = 0;
 
   //if the card is moving and the newStack is not "stackOfCompletedCards"
@@ -444,7 +472,6 @@ function distributeCards() {
  * This number is synonym to game difficulty.
  */
 function CardGenerator(numberOfColors) {
-  
   this.generateCards = () => {
     let numbers = [
       { text: "A", value: 1 },
